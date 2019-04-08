@@ -1,10 +1,16 @@
 import java.util.*;
-import java.io;
+import java.io.*;
 
 class Encrypt
 {
- public static void main(String args[])
- {
+ public static void main(String args[]) throws Exception{
+
+   if (args.length != 1){
+     System.err.println("One argument expected!");
+     System.exit(1);
+   }
+
+   FileReader fr = new FileReader(args[0]);
  Scanner sc=new Scanner(System.in);
  int shift,i,n;
  String str;
@@ -12,7 +18,7 @@ class Encrypt
  String str2="";
  System.out.println("Enter the plaintext");
  str=sc.nextLine();
- // str=str.toLowerCase();
+ // str=str.toLowerCase();x
  n=str.length();
  char ch1[]=str.toCharArray();
  char ch3,ch4;
