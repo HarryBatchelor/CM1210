@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.*;
 import java.io.*;
 
@@ -23,23 +24,33 @@ class Encrypt
  char ch1[]=str.toCharArray();
  char ch3,ch4;
  shift=25;
+=======
+import java.util.Scanner;
+import java.io.*;
 
- System.out.println();
- System.out.println("Encrypted text is");
- for(i=0;i<n;i++)
- {
- if(Character.isLetter(ch1[i]))
- {
- ch3=(char)(((int)ch1[i]+shift-97)%26+97);
- //System.out.println(ch1[i]+" = "+ch3);
- str1=str1+ch3;
- }
- else if(ch1[i]==' ')
- {
- str1=str1+ch1[i];
- }
- }
- System.out.println(str1);
- System.out.println(str2);
- }
+public class Encrypt{
+  public static void main(String[] args) throws Exception{
+    if (args.length != 1){
+      System.err.println("One argument expected!");
+      System.exit(1);
+    }
+    FileReader fr = new FileReader(args[0]);
+    int i;
+    int newAscii = 0;
+>>>>>>> a6f1191305add36511828c4e047d4f7ab005f5db
+
+    while ((i=fr.read()) != -1)
+      if ((int) i != -1){
+        if ((int) i <=122  && (int) i >=98){  //if the ascii character is inbetween z and b then -1 from the ascii value
+          newAscii = i -1;
+        }
+        else if ((int) i == 97){
+          newAscii = 122; //if the ascii character is a then change it to z
+        }
+        else{
+          newAscii = i; //Leaves capitals and special charcters the same value
+        }
+        System.out.print((char) newAscii);
+      }
+  }
 }
