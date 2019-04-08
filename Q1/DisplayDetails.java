@@ -71,4 +71,34 @@ try{
       else;
   }
   }
+  public void loadPlayer(){
+    Scanner scanner = new Scanner(System.in);
+    int fromPlayer;
+    int toPlayer;
+    String player;
+    int index = 1;
+    try{
+      FileReader fr = new FileReader("details.txt");
+      BufferedReader br = new BufferedReader(fr);
+
+      while((player = br.readLine()) != null){
+        allPlayersArray.add(player);
+      }
+      br.close();
+    }
+    catch(IOException e){
+      System.out.println("Error in file");
+    }
+    System.out.println("Input the range of players you would like to find....From:");
+    fromPlayer = Integer.parseInt(scanner.nextLine());
+    fromPlayer = fromPlayer -1;
+    System.out.println("To:");
+    toPlayer = Integer.parseInt(scanner.nextLine());
+    toPlayer = toPlayer -1;
+
+    for(int i = fromPlayer; i <= toPlayer; i ++){
+      System.out.println(allPlayersArray.get(i));
+      index = index + 1;
+    }
+  }
   }

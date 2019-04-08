@@ -49,6 +49,8 @@ public void PickMenu(){
 
       case 4:
       System.out.println("\nDelete a player");
+      DeletePlayer deletePlayer = new DeletePlayer();
+      deletePlayer.delete();
       break;
 
       case 5:
@@ -64,7 +66,9 @@ public void PickMenu(){
       break;
 
       case 7:
-      System.out.println("\nDisplay specific rugby players on the screen");
+      System.out.println("\nDisplay specific rugby players");
+      DisplayDetails specificPlayer = new DisplayDetails();
+      specificPlayer.loadPlayer();
       break;
 
       case 8:
