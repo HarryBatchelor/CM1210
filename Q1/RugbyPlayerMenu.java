@@ -53,10 +53,14 @@ public void PickMenu(){
 
       case 5:
       System.out.println("\nSearch a stadium by address");
+      DisplayDetails searchStadium = new DisplayDetails();
+      searchStadium.searchStadium();
       break;
 
       case 6:
       System.out.println("\nSearch players");
+      DisplayDetails searchPlayers = new DisplayDetails();
+      searchPlayers.searchTeamName();
       break;
 
       case 7:
