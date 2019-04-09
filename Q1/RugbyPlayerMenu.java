@@ -45,6 +45,8 @@ public void PickMenu(){
 
       case 3:
       System.out.println("\nCreate a new file");
+      CreateFile createNewFile = new CreateFile();
+      createNewFile.File();
       break;
 
       case 4:

@@ -1,3 +1,4 @@
-Harry Batchelor , RFU00211, 12, Comp Sci Rugby, CSR0002, Bute park, Bute Road, Cardiff, CF14 3UA
-Louis DC, RFU00145, 789, CARBS Rugby, CBR1457, Cardiff Arms Park, Arms Street, Cardiff, CF12 5BC
-Tyler Jenkins, RFU12345, 0, Sengenith Rugby, SGR1234, Seng Stadium, Seng Street, Segentith, SG56 7LK
+Harry Batchelor , RFU00211, 12, Comp Sci Rugby, CSR0002, Bute park, Bute Road, Cardiff, C6DIF
+Louis DC, RFU00145, 789, CARBS Rugby, CBR1457, Cardiff Arms Park, Arms Street, Cardiff, C4DIF
+Tyler Jenkins, RFU12345, 0, Sengenith Rugby, SGR1234, Seng Stadium, Seng Street, Segentith, S2EG
+Tom Clare, RFU09876, 56, Comp Sci Rugby, CSR0001, Queens stadium, Queen Street, Cardiff, Q1STR
