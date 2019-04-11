@@ -1,6 +1,14 @@
-import java.util.*;
-import java.io.*;
+public class String extends Instruments {
 
-public class String{
+	private int numberStrings;
 
+	public String (String price, String weight, String maker, int numberStrings) {
+		super(price, weight, maker);
+		this.numberStrings = numberStrings;
+	}
+
+	public void output() {
+		// super.print();
+		System.out.println("Number of Strings: " + numberStrings);
+	}
 }
