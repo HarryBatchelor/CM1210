@@ -2,13 +2,13 @@ import java.util.*;
 import java.io.*;
 
 public class Instruments{
-  Scanner scanner = new Scanner(System.in);
   boolean exit = false;
+  Scanner scanner = new Scanner(System.in);
 
   public static void main(String[] args){
     Instruments menu = new Instruments();
     menu.runmenu();
-    }
+  }
     public void runmenu(){
       while(exit == false){
         System.out.println("(1) Add a new brass instrument");

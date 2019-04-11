@@ -3,26 +3,37 @@ import java.io.*;
 
 public class Encrypt{
   public static void main(String[] args) throws Exception{
-    if (args.length != 1){
-      System.err.println("One argument expected!");
-      System.exit(1);
+    // if (args.length !=1){
+    //   System.err.println("One argument expected!");
+    //   System.exit(1);
+    // }
+    String fileName = "Secret.bin";
+    try{
+      FileOutputStream fileOs = new FileOutputStream(fileName);
+      ObjectOutputStream os = new ObjectOutputStream(fileOs);
+      os.writeInt(2048);
     }
-    FileReader fr = new FileReader(args[0]);
-    int i;
-    int newAscii = 0;
+    catch(FileNotFoundException e){
+      e.printStackTsrace("file");
+    }
+    catch(IOException e){
+      e.printStackTrace("error 1");
+    }
+    System.out.println("DOne Writing");
+    try{
+    FileInputStream fileIs = new FileInputStream(fileName);
+    ObjectInputStream is = new ObjectInputStream(fileIs);
+    int s = is.readInt();
+    System.out.println("THis works");
+    System.out.println(s);
+    is.close();
+  }
+  catch(FileNotFoundException e){
+    e.printStackTrace("file 2");
+  }
+  catch(IOException e){
+    e.printStackTrace("error 2");
+  }
 
-    while ((i=fr.read()) != -1)
-      if ((int) i != -1){
-        if ((int) i <=122  && (int) i >=98){  //if the ascii character is inbetween z and b then -1 from the ascii value
-          newAscii = i -1;
-        }
-        else if ((int) i == 97){
-          newAscii = 122; //if the ascii character is a then change it to z
-        }
-        else{
-          newAscii = i; //Leaves capitals and special charcters the same value
-        }
-        System.out.print((char) newAscii);
-      }
   }
 }
