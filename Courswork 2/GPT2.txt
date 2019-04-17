@@ -1,0 +1,53 @@
+Researchers create 'malicious' writing AI
+
+A team of researchers who have built an artificially-intelligent writer say they are withholding the technology as it might be used for "malicious" purposes.
+
+OpenAI, based in San Francisco, is a research institute backed by Silicon Valley luminaries including Elon Musk and Peter Thiel.
+
+It shared some new research on using machine learning to create a system capable of producing natural language, but in doing so the team expressed concern the tool could be used to mass-produce convincing fake news.
+
+Which, to put it another way, is of course also an admission that what its system puts out there is unreliable, made-up rubbish. Still, when it works well, the results are impressively realistic in tone - which is why I've shared a sample of it below.
+
+Feeding the system
+
+OpenAI said its system was able to produce coherent articles, on any subject, requiring only a brief prompt. The AI is "unsupervised", meaning it does not have to be retrained to talk about a different topic.
+
+It generates text using data scraped from approximately 8m webpages. To "feed" the system, the team created a new, automated method of finding "quality" content on the internet.
+
+Rather than scrape data from the web indiscriminately, which would have provided a lot of messy information, the system only looked at pages posted to link-sharing site Reddit. Their data only included links that had attracted a "karma" score of 3 or above, meaning at least three humans had deemed the content valuable, for whatever reason.
+
+"This can be thought of as a heuristic indicator for whether other users found the link interesting, educational or just funny," the research paper said.
+
+The AI generates the story word-by-word. The resulting text is often coherent, but rarely truthful - all quotes and attributions are fabricated. The sentences are based on information already published online, but the composition of that information is intended to be unique.
+
+Sometimes the system spits out passages of text that do not make a lot of sense structurally, or contain laughable inaccuracies.
+
+In one demo given to the BBC, the AI wrote that a protest march was organised by a man named "Paddy Power" - recognisable to many in the UK as being a chain of betting shops.
+
+"We have observed various failure modes," the team observed. "Such as repetitive text, world modelling failures (eg the model sometimes writes about fires happening under water), and unnatural topic switching."
+
+Under wraps
+
+In calling around for an independent view on OpenAI's work, it became clear that the institute is not altogether popular among many in this field. "Hyperbolic," was how one independent expert described the announcement (and much of the work OpenAI does).
+
+"They have a lot of money, and they produce a lot of parlour tricks," said Benjamin Recht, associate professor of computer science at UC Berkeley.
+
+Another told me she felt OpenAI's publicity efforts had "negative implications for academics", and pointed out that the research paper published alongside OpenAI's announcement had not been peer-reviewed.
+
+But Prof Recht did add: "The idea that AI researchers should think about the consequences of what they are producing is incredibly important."
+
+OpenAI said it wanted its technology to prompt a debate about how such AI should be used and controlled.
+
+"[We] think governments should consider expanding or commencing initiatives to more systematically monitor the societal impact and diffusion of AI technologies, and to measure the progression in the capabilities of such systems."
+
+Brandie Nonnecke, director of Berkeley's CITRIS Policy Lab, an institution that studies societal impacts of technology, said such misinformation was inevitable. She felt debate should focus more keenly on the platforms - such as Facebook - upon which it might be disseminated.
+
+"It's not a matter of whether nefarious actors will utilise AI to create convincing fake news articles and deepfakes, they will," she told the BBC.
+
+"Platforms must recognise their role in mitigating its reach and impact. The era of platforms claiming immunity from liability over the distribution of content is over. Platforms must engage in evaluations of how their systems will be manipulated and build in transparent and accountable mechanisms for identifying and mitigating the spread of maliciously fake content."
+
+Earlier this week, US President Donald Trump directed his federal agencies to develop a strategy to advance artificial intelligence. He is set to sign an executive order to launch the initiative on Monday.
+
+The move came amid fears in the US that it is being outpaced by China and other countries when it comes to the technology.
+
+https://www.bbc.co.uk/news/technology-47249163
