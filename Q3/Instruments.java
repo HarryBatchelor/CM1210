@@ -1,71 +1,41 @@
 import java.util.*;
 import java.io.*;
+public class Instruments {
+	private String weight;
+  private String price;
+	private String maker;
+	public static void main(String[] args) {
+		System.out.println("Courswork Question 3. Hierarchical Inheritance");
+	}
+	public Instruments (String weight, String price, String maker) {
+		this.price = price;
+		this.weight = weight;
+		this.maker = maker;
+	}
+	protected final String getprice(){
+		return this.price;
+	}
 
-public class Instruments{
-  boolean exit = false;
-  Scanner scanner = new Scanner(System.in);
+	protected final String getweight(){
+		return this.weight;
+	}
+  protected final String getmaker(){
+		return this.maker;
+	}
+	public void setmaker(String instrmaker){
+		this.maker = instrmaker;
+	}
+	public void setprice(String instrprice){
+		this.price = instrprice;
+	}
 
-  public static void main(String[] args){
-    Instruments menu = new Instruments();
-    menu.runmenu();
-  }
-    public void runmenu(){
-      while(exit == false){
-        System.out.println("(1) Add a new brass instrument");
-        System.out.println("(2) Add a new percussion instrument");
-        System.out.println("(3) Add a new String instrument");
-        System.out.println("(4) Add a new Woodwind instrument");
-        System.out.println("(5) Show all instruments");
-        System.out.println("(6) Exit");
-        PickMenu();
+	public void setweight(String instrweight){
+		this.weight = instrweight;
+	}
 
-      }
-    }
-    public void PickMenu(){
-      int choice = 0;
-      try{
-        System.out.print("Enter your choice: ");
-        choice = Integer.parseInt(scanner.nextLine());
-      }
-      catch(NumberFormatException e){
-        System.out.print("\nPlease enter a number between 1-6");
-      }
-      switch(choice){
-        case 1:
-        System.out.println("\nAdd a new brass instrument");
-        // Brass newBrass = new Brass();
-        // newBrass.brassInput();
-        break;
-
-        case 2:
-        System.out.println("\nAdd a new percussion instrument");
-        Percussion newPercussion = new Percussion();
-        newPercussion.percussionInput();
-        break;
-
-        case 3:
-        System.out.println("\nAdd a new string instrument");
-
-        break;
-
-        case 4:
-        System.out.println("\nAdd a new woodwind instrument");
-
-        break;
-
-        case 5:
-        System.out.println("\n Show all instruments");
-
-        break;
-
-        case 6:
-        System.out.println("\nExit");
-        exit = true;
-        break;
-
-        default:
-        System.out.println("\nEnter a number between 1-6\n");
-        break;
-      }
-    }
-  }
+	public void output() {
+		System.out.println("maker: " + maker);
+		System.out.println("Price: " + price);
+		System.out.println("weight: " + weight);
+	}
+}

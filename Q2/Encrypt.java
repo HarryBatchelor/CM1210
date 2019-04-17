@@ -1,39 +1,41 @@
 import java.util.*;
 import java.io.*;
+public class Encrypt {
+    public static void main(String[] args) throws Exception{
+        if (args.length != 1) {
+            System.err.println("One argument expected!");
+            System.exit(1);
+        }
+        String fileName = args[0];
+        try {
+            FileInputStream fileIs = new FileInputStream(fileName);
+            ObjectInputStream is = new ObjectInputStream(fileIs);
+            String msg = "";
+            String s = (String) is.readUTF();
 
-public class Encrypt{
-  public static void main(String[] args) throws Exception{
-    // if (args.length !=1){
-    //   System.err.println("One argument expected!");
-    //   System.exit(1);
-    // }
-    String fileName = "Secret.bin";
-    try{
-      FileOutputStream fileOs = new FileOutputStream(fileName);
-      ObjectOutputStream os = new ObjectOutputStream(fileOs);
-      os.writeInt(2048);
-    }
-    catch(FileNotFoundException e){
-      e.printStackTsrace("file");
-    }
-    catch(IOException e){
-      e.printStackTrace("error 1");
-    }
-    System.out.println("DOne Writing");
-    try{
-    FileInputStream fileIs = new FileInputStream(fileName);
-    ObjectInputStream is = new ObjectInputStream(fileIs);
-    int s = is.readInt();
-    System.out.println("THis works");
-    System.out.println(s);
-    is.close();
-  }
-  catch(FileNotFoundException e){
-    e.printStackTrace("file 2");
-  }
-  catch(IOException e){
-    e.printStackTrace("error 2");
-  }
+            System.out.println("Input = "+ s);
+            for (char ch: s.toCharArray()) {
 
-  }
+                int byteRead = (int) ch;
+                if (byteRead <= 122){
+                    if (byteRead >=97){
+                        if (byteRead == 97){
+                            byteRead = 123;
+                        }
+                        byteRead -= 1;
+
+                    }
+                }
+                char newCh = (char) byteRead;
+                 msg += newCh;
+            }
+            System.out.print("Output = " +msg);
+        } catch (FileNotFoundException e) {
+            System.out.println("Error finding file");
+        } catch (IOException e) {
+            System.out.println("Error reading file");
+        }
+
+
+    }
 }
