@@ -2,26 +2,32 @@ import java.io.*;
 import java.util.*;
 public class InsertionSort{
   public static void main(String[] args) throws FileNotFoundException {
-      Scanner s = new Scanner(new File("GPT2.txt"));
+    long start = System.currentTimeMillis();
+    System.out.println("Start: " + start);
+      Scanner s1 = new Scanner(new File("GPT2.txt"));
       ArrayList<String> Unsorted = new ArrayList<String>();
-      while (s.hasNextLine())
-          Unsorted.add(s.next().toLowerCase().replaceAll("[^A-Za-z0-9]", ""));
-      s.close();
+      while (s1.hasNext())
+          Unsorted.add(s1.next().toLowerCase().replaceAll("[^A-Za-z0-9]", ""));
+      s1.close();
 
-      String[] Text = Unsorted.toArray(new String[Unsorted.size()]);
-  for(int i = 1; i < Text.length; i++){
-    String key = Text[i];
+      String[] Words = Unsorted.toArray(new String[Unsorted.size()]);
+  for(int i = 1; i < Words.length; i++){
+    String key = Words[i];
     int j = i - 1;
     while(j >= 0){
-    if(key.compareTo(Text[j]) > 0 ){
+    if(key.compareTo(Words[j]) > 0 ){
       break;
     }
-    Text[j + 1] = Text[j];
+    Words[j + 1] = Words[j];
     j--;
   }
-  Text[j+1] = key;
+  Words[j+1] = key;
 }
 
-System.out.println(Text);
+// System.out.println(Text);
+long finish = System.currentTimeMillis();
+System.out.println("Finish : " + finish);
+long elapsedTime = finish - start;
+System.out.println("This insertion sort algorithm took roughly: " + elapsedTime + " milliseconds to complete");
 }
 }

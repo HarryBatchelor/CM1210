@@ -9,12 +9,12 @@ public class InsertionSortLou {
 
     long start = System.nanoTime();
     System.out.println("Start : " + start);
-    Scanner s = new Scanner(new File("GPT2.txt"));
+    Scanner s1 = new Scanner(new File("GPT2.txt"));
     ArrayList<String> GPT2 = new ArrayList<String>();
 
-    while (s.hasNextLine())
-      GPT2.add(s.next().toLowerCase().replaceAll("[^A-Za-z0-9]", ""));
-    s.close();
+    while (s1.hasNextLine())
+      GPT2.add(s1.next().toLowerCase().replaceAll("[^A-Za-z0-9]", ""));
+    s1.close();
 
     String[] Text = GPT2.toArray(new String[GPT2.size()]);
 

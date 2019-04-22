@@ -1,22 +1,25 @@
 import java.io.*;
 import java.util.*;
 public class Test{
-public static void main(String[] args){
-    int[] A = {5,6,8,9,1,2,3};
-    System.out.println(Arrays.toString(A));
-    InsertionSort(A);
-    System.out.println(Arrays.toString(A));
-}
-
-public static void InsertionSort(int[] A){
-    for(int j = 1; j < A.length; j++){
-        int key = A[j];
-        int i = j - 1;
-        while(i > 1 && A[i] > key){
-            A[i + 1] = A[i];
-            i = i - 1;
+  public static void main(String[] args) throws FileNotFoundException{
+    Scanner s = new Scanner(new File("GPT2.txt"));
+    ArrayList<String> Unsorted = new ArrayList<String>();
+    while (s.hasNextLine())
+      Unsorted.add(s.next().toLowerCase().replaceAll("[^A-Za-z0-9]", ""));
+      s.close();
+      String[] Text = Unsorted.toArray(new String[Unsorted.size()]);
+    for(int i = 1; i < Text.length; i++){
+      String key = Text[i];
+      int j = i - 1;
+      while(j >= 0){
+        if(key.compareTo(Text[j]) > 0 ){
+          break;
         }
-        A[i + 1] = key;
+        Text[j+1] = Text[j];
+        j--;
+      }
+      Text[j+1] = key;
     }
-}
+    System.out.println(Text);
+  }
 }
