@@ -9,7 +9,7 @@ public class Sorting{
 
     for (int i = 100; i <= 1000; i += 100){
 
-    List<String> data = new ArrayList<String>(dataFull.subList(0, i));
+    List<String> data = new ArrayList<String>(dataFull.subList(0, 400));
 
     comparisons = 0;
     moves = 0;
@@ -20,9 +20,9 @@ public class Sorting{
     long durationInsertion = (endInsertion - startInsertion);
     System.out.println("INSERTION SORT");
     System.out.println("Number of words in insertion sort: " + Integer.toString(data.size()));
-    System.out.println("Number of Comparisons:" + Integer.toString(comparisons));
-    System.out.println("Number of Moves:" + Integer.toString(moves));
-    System.out.println("Time taken:" + Long.toString(durationInsertion) + " Nano seconds");
+    System.out.println("Number of Comparisons: " + Integer.toString(comparisons));
+    System.out.println("Number of Moves: " + Integer.toString(moves));
+    System.out.println("Time taken: " + Long.toString(durationInsertion) + " Nano seconds");
 
     comparisons = 0;
     moves = 0;
@@ -92,52 +92,52 @@ public static List<String> mergeSort(List<String> UnsortedMerge){
       return text;
   }
 
-  List<String> leftBranch = new ArrayList<String>();
-  List<String> rightBranch = new ArrayList<String>();
+  List<String> Left = new ArrayList<String>();
+  List<String> Right = new ArrayList<String>();
   int i = 0;
-  for (String item : text) {
+  for (String word : text) {
       comparisons++;
       if (i < text.size()/2) {
-          leftBranch.add(item);
+          Left.add(word);
           moves++;
       } else {
-          rightBranch.add(item);
+          Right.add(word);
           moves++;
       }
       i++;
   }
 
-  leftBranch = mergeSort(leftBranch);
-  rightBranch = mergeSort(rightBranch);
-  return merge(leftBranch, rightBranch);
+  Left = mergeSort(Left);
+  Right = mergeSort(Right);
+  return merge(Left, Right);
   }
 
-public static List<String> merge(List<String> leftBranch, List<String> rightBranch) {
+public static List<String> merge(List<String> Left, List<String> Right) {
     List<String> merging = new ArrayList<String>();
-    while (leftBranch.size() > 0 && rightBranch.size() > 0) {
+    while (Left.size() > 0 && Right.size() > 0) {
         comparisons++;
-        if (leftBranch.get(0).compareTo(rightBranch.get(0)) < 0) {
-            merging.add(leftBranch.get(0));
-            leftBranch.remove(0);
+        if (Left.get(0).compareTo(Right.get(0)) < 0) {
+            merging.add(Left.get(0));
+            Left.remove(0);
             moves++;
         } else {
-            merging.add(rightBranch.get(0));
-            rightBranch.remove(0);
+            merging.add(Right.get(0));
+            Right.remove(0);
             moves++;
         }
     }
 
-    while (leftBranch.size() != 0) {
+    while (Left.size() != 0) {
         comparisons++;
-        merging.add(leftBranch.get(0));
-        leftBranch.remove(0);
+        merging.add(Left.get(0));
+        Left.remove(0);
         moves++;
     }
 
-    while (rightBranch.size() != 0) {
+    while (Right.size() != 0) {
         comparisons++;
-        merging.add(rightBranch.get(0));
-        rightBranch.remove(0);
+        merging.add(Right.get(0));
+        Right.remove(0);
         moves++;
     }
     return merging;
