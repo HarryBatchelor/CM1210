@@ -9,7 +9,7 @@ public class Sorting{
 
     for (int i = 100; i <= 1000; i += 100){
 
-    List<String> data = new ArrayList<String>(dataFull.subList(0, 400));
+    List<String> data = new ArrayList<String>(dataFull.subList(0, i));
 
     comparisons = 0;
     moves = 0;
