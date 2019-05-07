@@ -7,8 +7,10 @@ public class Sorting{
     try{
       List<String> dataFull = Data("GPT2.txt");
 
-    for (int i = 100; i <= 1000; i += 100){
-
+    for (int i = 100; i <= 500; i += 100){
+      if (i> dataFull.size()){
+        i = dataFull.size();
+      }
     List<String> data = new ArrayList<String>(dataFull.subList(0, i));
 
     comparisons = 0;
@@ -71,12 +73,15 @@ public static List<String> InsertionSort(List<String> UnsortedInsertion) {
   for(int i = 1; i < Words.length; i++){
     String key = Words[i];
     int j = i - 1;
-    comparisons++;
+
     while(j >= 0){
+      comparisons++;
     if(key.compareTo(Words[j]) > 0 ){
-      moves++;
+
       break;
+
     }
+    moves++;
     Words[j + 1] = Words[j];
     j--;
   }

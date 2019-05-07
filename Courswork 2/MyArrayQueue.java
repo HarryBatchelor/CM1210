@@ -70,6 +70,7 @@ public class MyArrayQueue
    }
    }
 
+
    /** remove an element from the front of the queue
      * @return removed element */
    public Object dequeue()
@@ -83,42 +84,34 @@ public class MyArrayQueue
        return  firstItem;
      }
    }
-
-   /** test program */
    public static void main(String [] args)
-   {
-      MyArrayQueue q = new MyArrayQueue(3);
-      boolean first = true;
-      int pick = 0;
-      while(!q.isEmpty()||first == true){
-        first = false;
-        try{
-          Scanner in = new Scanner(System.in);
-          System.out.println("Please input the number of the choice you want to pick:");
-          System.out.println("1. Add item to queue");
-          System.out.println("2. Remove item from the queue");
-          System.out.println("3. Quit");
-          pick = in.nextInt();
+     {
+        MyArrayQueue q = new MyArrayQueue(3);
+        // add a few elements
+        q.enqueue("element1");	//q.put(new Integer(1));
+        q.enqueue("element2");	//q.put(new Integer(2));
+        q.enqueue("element3");	//q.put(new Integer(3));
+        q.enqueue("element4");	//q.put(new Integer(4));
+
+        // remove and add to test wraparound array doubling
+        q.dequeue();
+        q.dequeue();
+        q.enqueue("element5");	//q.put(new Integer(5));
+        q.enqueue("element6");	//q.put(new Integer(6));
+        q.enqueue("element7");	//q.put(new Integer(7));
+        q.enqueue("element8");	//q.put(new Integer(8));
+        q.enqueue("element9");	//q.put(new Integer(9));
+        q.enqueue("element10");	//q.put(new Integer(10));
+        q.enqueue("element11");	//q.put(new Integer(11));
+        q.enqueue("element12");	//q.put(new Integer(12));
+
+        // delete all elements
+        while (!q.isEmpty())
+        {
+        	  System.out.println("Rear element   : " + q.getRearElement());
+      	  System.out.println("Front element  : " + q.getFrontElement());
+      	  System.out.println("Removed element: " + q.dequeue() + "\n");
         }
-        catch(InputMismatchException e){
-          System.out.println("Please enter 1, 2 or 3");
-        }
-        if (pick == 1){
-          Scanner in_ch1 = new Scanner(System.in);
-          System.out.println("Please enter the item you want to add to the queue");
-          String input = in_ch1.nextLine();
-          q.enqueue(input);
-          System.out.println("Rear element : " + q.getRearElement());
-          System.out.println("Front element : " + q.getFrontElement());
-        }
-        else if(pick == 2){
-          System.out.println(q.dequeue());
-          System.out.println();
-          System.out.println("Rear element : " + q.getRearElement());
-          System.out.println("Front element : " + q.getFrontElement());
-        }
-        else if(pick == 3) break;
-      }
-	  if (q.isEmpty()) System.out.println("empty queue");
-   }
-}
+  	  if (q.isEmpty()) System.out.println("empty queue");
+     }
+  }
